@@ -1,0 +1,56 @@
+x = str(input("Are you tax exempt?: "))
+if x == "yes":
+    a = float(input("Enter cost of goods: "))
+    total = a
+    print(a)
+    y = float(input("Howmuch would you like to pay?: "))
+    if y < total:
+        print("Error! Not enough money paid ")
+    elif y == total:
+        print("No change needed ")
+    else:
+        change = y - total
+        print(f"change: ${change:.2f}")
+
+        dollars = int(change)
+        change -= dollars
+        quarters = int(change / 0.25)
+        change -= quarters * 0.25
+        dimes = int(change / 0.10)
+        change -= dimes * 0.10
+        nickels = int(change / 0.05)
+        change -= nickels * 0.05
+        pennies = int(change / 0.01)
+
+        print(f"Change breakdown: ${dollars} (1-dollar bills), {quarters} (quarters), {dimes} (dimes), {nickels} (nickels), {pennies} (pennies)")
+
+elif x == "no":
+    a = float(input("Enter total amount of taxable goods: "))
+    b = float(input("Enter total amount of non-taxable goods: "))
+    total = a * 1.125 + b
+    print(total)
+    y = float(input("Howmuch would you like to pay?: "))
+    if y < total:
+        print("Error! Not enough money paid ")
+    elif y == total:
+        print("No change needed")
+    else: 
+        change = y - total
+        print(f"change: ${change:.2f}")
+
+        dollars = int(change)
+        change -= dollars
+        quarters = int(change / 0.25)
+        change -= quarters * 0.25
+        dimes = int(change / 0.10)
+        change -= dimes * 0.10
+        nickels = int(change / 0.05)
+        change -= nickels * 0.05
+        pennies = int(change / 0.01)
+
+        print(f"Change breakdown: ${dollars} (1-dollar bills), {quarters} (quarters), {dimes} (dimes), {nickels} (nickels), {pennies} (pennies)")
+
+
+
+else:
+    print("Error: Invalid input")
